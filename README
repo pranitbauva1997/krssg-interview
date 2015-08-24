@@ -1,0 +1,16 @@
+I have made this website for my interview at KRSSG (IIT Kharagpur).
+I have used HTML, CSS, and python.
+The website is completely written in HTML and CSS with no
+server side code. Initially I thought I would use PHP, but then
+I realised that the server hosting the website would have to process 
+a lot because whenever the page is requested it would fetch the blog posts
+and then display. That would be a lot of overload. So after thinking a bit
+I came up with an idea to make my own Content Management System(CMS).
+Don't worry it is not a serious one. In fact a very rudimentary one just to
+fill my basic needs and the best I could get with one full night of coding
+as I had my physics exam after that. I made the CMS in python, and it
+can be used to add posts and then update the blog after that. If I get time
+I will surely try to improve it. This is my first experience writing a
+web front end as I have always worked with backends. It was an awesome
+experience something different from the console (you get to use your
+browser and mouse).
