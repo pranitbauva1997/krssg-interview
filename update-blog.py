@@ -15,8 +15,8 @@ def get_posts(page):
         if index < 0:
             break
         temp = page.find('id=', index) + 4
-        post_id.append(int(page[temp:temp+10]))
-        print(post_id)
+        post_id.append(int(page[temp:page.find('"', temp)]))
+#        print(post_id)
         temp += 10
         index = temp + 50
 #        print("post_id" + str(post_id))
@@ -42,7 +42,7 @@ def get_post_details(id):
         by reading the file and return title, content, date, time
     """
 
-    f = open('posts/' + str(id), 'r')
+    f = open('posts/' + str(id) + ".post", 'r')
     text = f.read().split('\n')
     f.close()
     print(text)
@@ -64,11 +64,20 @@ def generate_web_page(page):
 posts_in_dir = os.listdir("posts/")
 f = open("index.html", "r")
 posts_in_dir.sort(reverse=True)
+#print("posts_in_dir : " + str(posts_in_dir))
 web_page = f.read()
 f.close()
 posts_in_blog = get_posts(web_page)
 posts_in_blog.sort(reverse=True)
-print(posts_in_blog)
+#print("posts_in_blog : " + str(posts_in_blog))
+
+# Remove the ".post"
+counter = 0
+while counter < len(posts_in_dir):
+	temp = posts_in_dir[counter]
+#	print(temp)
+	posts_in_dir[counter] = int(temp[:temp.find(".")])
+	counter += 1
 posts_to_be_added = []
 
 
@@ -82,7 +91,6 @@ for post in posts_in_dir:
 posts_to_be_added.sort()
 for id in posts_to_be_added:
     title, content, date, time = get_post_details(id)
-    id = id[:9]
     web_page = add_post(web_page, web_page.find('<div id="section"') + 19, id, title, content)
 
 generate_web_page(web_page)
