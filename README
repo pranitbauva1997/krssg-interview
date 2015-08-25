@@ -30,3 +30,12 @@ HTML code and add the post to the website. Further you would need to upload
 the changed file to the server. I am working on making a bash script
 so that it can transfer it to my web host via FTP protocol. For the time
 being you would have to do it yourself.
+
+Some things I need to work on : 
+Well as you can see this project is not well documented nor it uses some
+good programming practices. I am really a strict follower of good
+programming practices, but I had a time constraint and I just had to get
+the web site working. And I am also working on the delete post feature
+and also on the feature that would display time and date of the post.
+The posts have the data about date and time, but I have not written code to
+show it on the blog. Anywhich ways I hope you like it!
