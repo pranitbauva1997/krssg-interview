@@ -23,8 +23,8 @@ How to use the CMS :-
 
 This CMS currently has the only feature of adding new posts.
 To add new post run "./add-entry.py" and type the title and content.
-That would make a file in posts/ directory. Then after add a post you need
-to update your index.html file so that it reflects the new posts.
+That would make a file in posts/ directory. Then after adding a post you
+need to update your index.html file so that it reflects the new posts.
 To do that run "./update-blog.py" which would take care of editing the
 HTML code and add the post to the website. Further you would need to upload
 the changed file to the server. I am working on making a bash script
