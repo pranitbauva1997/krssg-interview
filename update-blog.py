@@ -45,7 +45,7 @@ def get_post_details(id):
     f = open('posts/' + str(id) + ".post", 'r')
     text = f.read().split('\n')
     f.close()
-    print(text)
+#    print(text)
     title = text[0]
     content = text[1]
     date = text[2]
@@ -69,7 +69,8 @@ web_page = f.read()
 f.close()
 posts_in_blog = get_posts(web_page)
 posts_in_blog.sort(reverse=True)
-#print("posts_in_blog : " + str(posts_in_blog))
+#print("posts_in_blog : ")
+#print(posts_in_blog)
 
 # Remove the ".post"
 counter = 0
@@ -83,12 +84,17 @@ posts_to_be_added = []
 
 # Getting new posts
 for post in posts_in_dir:
-    if post not in posts_in_blog:
+    print(post)
+    if (post not in posts_in_blog):
+#        print(post in posts_in_blog)
         posts_to_be_added.append(post)
 
 
 # Reading and generating content for new posts.
 posts_to_be_added.sort()
+#print("Posts to be added : ")
+#print(posts_to_be_added)
+
 for id in posts_to_be_added:
     title, content, date, time = get_post_details(id)
     web_page = add_post(web_page, web_page.find('<div id="section"') + 19, id, title, content)
